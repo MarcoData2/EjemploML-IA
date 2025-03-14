@@ -1,0 +1,65 @@
+Datos guardados exitosamente en 'data/synthetic_data.csv'.
+Datos cargados correctamente desde el CSV.
+           category                                            message  ...  average_trip_duration  region
+0          finanzas  Sense suffer require vote point trial. Team so...  ...                     91   south
+1  recursos_humanos  Stay true away from eight chair news. Month dr...  ...                    114    west
+2  recursos_humanos  Create low lead. Why sit teacher current off a...  ...                     72   south
+3          finanzas  Current skin instead then hear long movement. ...  ...                     19    west
+4          finanzas  Possible soldier traditional population. Avoid...  ...                    106    east
+
+[5 rows x 17 columns]
+
+--- Análisis Exploratorio de Datos (EDA) ---
+Dimensiones del dataset: (3000, 17)
+
+Estadísticas descriptivas de variables numéricas:
+               age  years_of_experience  ...  number_of_trips_last_month  average_trip_duration
+count  3000.000000          3000.000000  ...                 3000.000000            3000.000000
+mean     39.941333             8.294000  ...                   54.913333              64.814333
+std      11.859319             5.663002  ...                   26.227539              31.920247
+min      20.000000             1.000000  ...                   10.000000              10.000000
+25%      30.000000             3.000000  ...                   33.000000              37.000000
+50%      40.000000             7.000000  ...                   55.000000              66.000000
+75%      50.000000            13.000000  ...                   78.000000              92.000000
+max      60.000000            20.000000  ...                  100.000000             120.000000
+
+[8 rows x 9 columns]
+
+Distribución de categorías de quejas:
+category
+operaciones         1060
+recursos_humanos    1017
+finanzas             923
+Name: count, dtype: int64
+/home/skullgett/Descargas/PruebaMLIA/test1.py:108: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.countplot(x='category', data=df, palette='viridis')
+
+Distribución de la variable objetivo 'high_turnover' (1: alta rotación, 0: baja):
+high_turnover
+0    2747
+1     253
+Name: count, dtype: int64
+Modelo entrenado con éxito.
+
+--- Evaluación del Modelo ---
+Reporte de Clasificación:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       557
+           1       1.00      1.00      1.00        43
+
+    accuracy                           1.00       600
+   macro avg       1.00      1.00      1.00       600
+weighted avg       1.00      1.00      1.00       600
+
+Matriz de Confusión:
+[[557   0]
+ [  0  43]]
+Traceback (most recent call last):
+  File "/home/skullgett/Descargas/PruebaMLIA/test1.py", line 189, in <module>
+    from textblob import TextBlob  # Importamos aquí para claridad en el flujo
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'textblob'
